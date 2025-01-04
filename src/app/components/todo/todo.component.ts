@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Todo } from '../../../models/todo.model';
 import { TodoService } from '../../service/todo.service';
 import {FormsModule} from '@angular/forms';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-todo',
-  imports: [FormsModule, NgFor],
+  imports: [FormsModule, NgFor, CommonModule],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.css'
 })

@@ -21,7 +21,10 @@
       <ul class="space-y-3">
         <li *ngFor="let todo of todos" 
             class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
-          <span class="text-gray-700">{{ todo.description }}</span>
+            <div class="flex items-center gap-4">
+                <input type="checkbox" class="mr-4" [checked]="todo.completed" (change)="toggleCompleted(todo.id)">
+                <span [ngClass]="{'text-gray-700': true, 'line-through': todo.completed}">{{ todo.description }}</span>
+            </div>
           <button 
             (click)="deleteTodo(todo.id)"
             class="px-4 py-2 text-sm text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
